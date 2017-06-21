@@ -1,0 +1,113 @@
+.rate{width:600px; margin:50px auto;
+ color:#51555c; font-size:14px; 
+ position:relative;
+  padding:10px 0;}
+.rate p {margin:0; padding:0; display:inline; height:40px;
+ overflow:hidden; position:absolute; top:0; left:100px; margin-left:140px;}
+.rate p span.s {
+font-size:36px; 
+line-height:36px;
+ float:left;
+  font-weight:bold; 
+  color:#DD5400;
+  margin-top:-1px;
+  margin-left: 20px; }
+.rate p span.g {font-size:22px; display:block; 
+float:left; color:#DD5400;
+margin-top:10px;
+ margin-left: 2px; 
+}
+.big_rate {width:140px; height:28px; 
+text-align:left; position:absolute; 
+top:3px; left:85px; 
+display:inline-block; 
+background:url(../images/star.gif) left bottom repeat-x;
+margin-left: 30px;}
+.big_rate span {display:inline-block; width:24px; height:28px; 
+position:relative; z-index:1000; cursor:pointer; overflow:hidden;}
+.big_rate_up {width:140px; height:28px; position:absolute; top:0; left:0; 
+background:url(../images/star.gif) left top;}
+#my_rate{ position:absolute; margin-top:40px; margin-left:100px}
+#my_rate span{color:#dd5400; font-weight:bold}
+.score-word {
+ background-color: yellow;
+ font-size: 20px;
+}
+            #outside{
+                width: 1000px;
+                margin: 0 auto;
+                border: 1px solid #E7EAEE;
+                overflow: hidden;
+                padding-bottom: 15px;
+            }
+            
+            #outside h3{
+                width: 95%;
+                margin: 15px auto;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #E7EAEE;
+                font-family: "宋体",sans-serif;
+            }
+            
+            #outside .comment1{
+                width: 95%;
+                margin: 10px auto;
+                color: #BBBBBB;
+                font-size: 12px;
+                border-bottom: 1px dashed #E7EAEE;
+                font-family: "宋体",sans-serif;
+            }
+            
+            #outside  time{
+                float: right;
+            }
+            
+            #outside .comment1 span{
+                color: #5979B2;
+                margin-left: 5px;
+                font-weight: bold;
+            }
+            
+            #outside .comment1 p{
+                font-size: 16px;
+                color: black;
+            }
+            
+            #outside h4{
+                width: 95%;
+                margin: 15px auto;
+                color: #404E73;
+                font-size: 16px;
+                font-weight: bold;
+                font-family: "宋体",sans-serif;
+            }
+            
+            #outside #addComment{
+                width: 95%;
+                margin: 0 auto;
+                font-size: 12px;
+                color: #BBBBBB;
+            }
+            
+            #outside #name{
+                width: 200px;
+                border: 1px solid #D9E2EF;
+            }
+            
+            #outside #comContent{
+                width: 800px;
+                height: 100px;
+                resize: none;
+                border: 1px solid #D9E2EF;
+                vertical-align: text-top;
+            }
+            
+            #outside button{
+                width: 100px;
+                height: 30px;
+                background-color: #2D46A3;
+                color: white;
+                border: hidden;
+                float: right;
+                margin: 15px 100px;
+            }

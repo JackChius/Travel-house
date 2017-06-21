@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/ecmascript" src="sha1.js"></script>
+</head>
+<body>
+    <div>
+    <p>
+        test
+    </p>
+        <h3></h3>
+    </div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    var shortTime = (new Date()).valueOf(); //生成毫秒级的长整型时间戳
+    var timeStamp = parseInt(shortTime);
+    var appId = "8db80f9aea12457f";
+    var appKey = "b7e741e3da724022b7fc8617333efa31";
+    var channelId = "1";
+    var all="appId="+appId+"&appKey="+appKey+"&timeStamp="+timeStamp;
+    var sign = hex_sha1(all);         //SHA1算法验证
+    var url ="http://pub.zhongguowangshi.com/rss?"+"channelId="+channelId+"&appId="+appId+"&timeStamp="+timeStamp+"&sign="+sign;
+    var getContent = $("div p");
+    getContent.html(url);
+
+    $.ajax({
+      url:url,
+      type:'get',
+      dataType:'xml',
+
+
+      error:function (XHR,textStatus) {
+       $("h3").html("服务器状态："+XHR.status+"<br>"+"请求阶段："+XHR.readyState);
+      },
+      success:function (xml,textStatus) {
+        var frag =$("<ul/>");
+         $(xml).find('item').each(function (i) {
+   var title = $(this).children("title");
+   var t_value = title.text();
+   var link = $(this).children("link");
+   var l_value = link.text();
+   var description = $(this).children("description");
+   var d_value = description.text();
+   frag.append("<li>"+t_value+"<br>"+l_value+"<br>"+d_value+"</li><br>");
+
+ })
+        frag.appendTo("div");
+
+      }
+    });
+  })
+
+
+   
+
+
+
+   </script> 
+</body>
+</html>         

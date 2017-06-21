@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='css/index.less' rel='stylesheet/less' type='text/css'>
+
+<!-- js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/less.min.js"></script>
+<!-- //js -->
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="一 Travel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!-- start-smoth-scrolling +回到顶部效果 -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+</head>
+	
+<body>
+<!-- banner -->
+	<div class="banner-with-text">
+		<div class="container">
+<!-- header -->	
+		<div class="header">
+			<div class="header-top">
+				<input type="text" placeholder="Search" required=" ">
+			</div>
+			<div class="clearfix"> </div>
+			<div class="header-bottom">
+				<div class="header-bottom-left">
+					<a href="index.html">一<span>旅游</span></a>
+				</div>
+				<div class="header-bottom-right">
+					<span class="menu">MENU</span>
+					<ul class="nav1">
+						<li class="cap"><a href="index.html">首页</a></li>
+						<li><a href="events.html">热门景点</a></li>
+						<li><a href="about.html">看游记</a></li>
+						<li><a href="photo-show/8-18.php">上传</a></li>
+						<li><a href="photo-show/8-17.php">图库</a></li>
+                        <li><a href="gallery.html">关于</a></li>	
+					</ul>
+					<!-- script for menu 移动端导航条滑出菜单 -->
+						<script> 
+							$( "span.menu" ).click(function() {
+							$( "ul.nav1" ).slideToggle( 300, function() {
+							 // Animation complete.
+							});
+							});
+						</script>
+					<!-- //script for menu -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>	
+<!-- //header -->
+<!-- Slider-starts-Here -->
+				<script src="js/responsiveslides.min.js"></script>
+				 <script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider3").responsiveSlides({
+				        auto: true,
+				        pager: true,
+				        nav: false,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+				
+				    });
+				  </script>
+			<!--//End-slider-script -->
+			<div  id="top" class="callbacks_container wow fadeInUp" data-wow-delay="0.5s">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="banner">	
+
+                            <div class="jumbotron banner-info">
+								<h1>暴走法兰西</h1>
+								<p> 从2015年第一次自由行圆满结束后，就变的一发不可收拾，近两年跑了太多的地方，也爱上了这种边走边记录的感觉</p>
+								<p><a class="btn btn-primary btn-lg" href="#" role="button">继续阅读</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="banner1">	
+							<div class="jumbotron banner-info">
+								<h1>九天，每天都是极限挑战</h1>
+								<p>一个月过去了，才决定提笔写下第二次台湾之旅。这一个月再次被工作的事情淹没写文章的情绪，可喜的是，旅行后的我开始对工作有新的思考和态度——工作和生活要融洽，工作需要放松，生活需要放空</p>
+								<p><a class="btn btn-primary btn-lg" href="#" role="button">继续阅读</a></p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="banner2">	
+							<div class="jumbotron banner-info">
+								<h1>左手大西洋，右手印度洋</h1>
+								<p> 开普敦是地中海气候，风景秀丽，空气清新，天高云淡，不像非洲更像欧洲，有欧洲小镇的清新和恬静，而且几乎遇不到黑人，法国人和德国人的后裔占据了大部分比例</p>
+								<p><a class="btn btn-primary btn-lg" href="#" role="button">继续阅读</a></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+	</div>
+	</div>
+<!-- //banner -->
+<!-- banner-bottom -->
+	<div class="banner-bdy">
+		<div class="container">
+	<div class="banner-bottom" id="events">
+			<div class="banner-bottom-grids">
+				<div class="col-md-4 banner-bottom-grid">
+					<img src="images/6.jpg" alt=" "/>
+					<div class="more">
+						<a href="events.html">动态</a>
+					</div>
+				</div>
+				<div class="col-md-4 banner-bottom-grid">
+					<img src="images/7.jpg" alt=" "/>
+					<div class="more">
+						<a href="events.html">游记</a>
+					</div>
+				</div>
+				<div class="col-md-4 banner-bottom-grid">
+					<img src="images/5.jpg" alt=" "/>
+					<div class="more">
+						<a href="events.html">图库</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="features">
+				<div class="col-md-9 features-left">
+					<h3> 热门游记</h3>
+					<div class="features-left-grids">
+						<div class="col-md-4 features-left-grid">
+							<a href="events.html"><img src="images/1.jpg" alt=" " /></a>
+						</div>
+						<div class="col-md-8 jumbotron features-left-grid1">
+							<h4><a href="events.html">深圳周边游 | 这么美的5个海滩，你还没去过？</a></h4>
+							<p>每次有人问我，深圳去哪儿玩？我都会第一时间说，去海滩呀！这里拥有广东沿海最长的海岸线，毗邻大亚湾，无论是夏天还是冬天，都有阳光沙滩和大海，还有吃不完的山珍海味等你来！</p>
+							<p><a class="btn read btn-primary btn-lg" href="events.html" role="button">继续阅读</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-left-grids">
+						<div class="col-md-4 features-left-grid">
+							<a href="events.html"><img src="images/3.jpg" alt=" " /></a>
+						</div>
+						<div class="col-md-8 jumbotron features-left-grid1">
+							<h4><a href="events.html">你可能不知道的龙脊梯田，玩法大公开！</a></h4>
+							<p>第一次抵达龙脊梯田的时候，去的是平安梯田。那时候在字面里理解，以为平安壮寨，金坑大寨，金竹壮寨，黄洛瑶寨都在一个山头等着我，以为自己可以一次性看完。努力的回忆着看到的图片和实地是不是一样的，在旅行书按图索骥下，我并没有获得惊喜，但因此滋生出很多好奇心。 到龙脊梯田一定要徒步，顺着青石板路拾级而上，眼中的梯田跟随你的移动变幻着曲线。要吃用山泉做出的土鸡，香纯鲜嫩。</p>
+							<p><a class="btn read btn-primary btn-lg" href="events.html" role="button">继续阅读</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-3 features-right">
+					<div class="features-rgt">
+						<h3>去哪儿</h3>
+						<div class="features-rgt-grid">
+							<div class="features-rgt-grid-left">
+								<h4><a href="events.html">沙面</a></h4>
+								<p>一个极富异国情调的地方</p>
+								<a href="events.html">详情</a>
+							</div>
+							<div class="features-rgt-grid-right">
+								<p>2/16</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="features-rgt-grid">
+							<div class="features-rgt-grid-left">
+								<h4><a href="events.html">黄姚古镇</a></h4>
+								<p>广西保存最为完好的明清建筑群</p>
+								<a href="events.html">详情</a>
+							</div>
+							<div class="features-rgt-grid-right">
+								<p>2/17</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="features-rgt-grid">
+							<div class="features-rgt-grid-left">
+								<h4><a href="events.html">外伶仃岛</a></h4>
+								<p>中国唯一能看到香港市区的海岛</p>
+								<a href="events.html">详情</a>
+							</div>
+							<div class="features-rgt-grid-right">
+								<p>2/11</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="all-events">
+							<a href="events.html">更多热门景点</a>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+	</div>
+<!-- //banner-bottom -->
+<!-- slider -->
+	<div class="sliderfig">
+		<ul id="flexiselDemo1">			
+			<li>
+				<div class="sliderfig-grids">
+					<div class="sliderfig-grid">
+						<img src="images/4.jpg" alt=" " />
+						<div class="slider-text">
+							<p>行走川藏</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sliderfig-grids">
+					<div class="sliderfig-grid">
+						<img src="images/5.jpg" alt=" " />
+						<div class="slider-text">
+							<p>拼图福建之再临厦门</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sliderfig-grids">
+					<div class="sliderfig-grid">
+						<img src="images/6.jpg" alt=" " />
+						<div class="slider-text">
+							<p>粤北初秋</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sliderfig-grids">
+					<div class="sliderfig-grid">
+						<img src="images/7.jpg" alt=" " />
+						<div class="slider-text">
+							<p>潮州行：迷失在古城的美味中</p>
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+			<script type="text/javascript">
+							$(window).load(function() {
+								$("#flexiselDemo1").flexisel({
+									visibleItems: 4,
+									animationSpeed: 1000,
+									autoPlay: true,
+									autoPlaySpeed: 3000,
+									pauseOnHover: true,
+									enableResponsiveBreakpoints: true,
+									responsiveBreakpoints: {
+										portrait: {
+											changePoint:480,
+											visibleItems: 2
+										},
+										landscape: {
+											changePoint:640,
+											visibleItems:3
+										},
+										tablet: {
+											changePoint:768,
+											visibleItems: 3
+										}
+									}
+								});
+
+							});
+	// 轮播图切换开始
+	$(function() {
+    var tb = [ "images/chengdu2.png", "images/chengdu.png","images/2.jpg","images/20.jpg","images/p25.jpeg","images/p26.jpeg"];
+    var img = $(".banner-with-text");
+	img.css("background", "url(images/chengdu.png) no-repeat 0px 0px");
+	img.css("background-size","cover");
+    var i = 0;
+    var interval = setInterval(function() {
+		var pic_url = tb[i];
+        img.css("background", "url("+ pic_url +") no-repeat 0px 0px");
+		img.css("background-size","cover");
+        i++;
+        i = i > tb.length - 1 ? 0 : i;
+    }, 4000);
+});
+	// 轮播图切换结束
+					</script>
+					<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	</div>
+	</div>
+	</div>
+<!-- //slider -->
+<!-- footer -->
+	<div class="footer-top">
+	<div class="container">
+		<div class="footer-top-grids">
+			<div class="col-md-4 footer-top-grid">
+				<h3>关于旅行</h3>
+				<p>如果不去接触未知，我们的感觉将变得迟钝，我们的世界就那么小小的一点儿，就连好奇心也将消失不见。我们的目光将不再放眼远方的地平线，耳朵也听不到那些熟悉的声音。 </p>
+				<div class="read1">
+					<a href="#">返回顶部</a>
+				</div>
+			</div>
+			<div class="col-md-4 footer-top-grid">
+				<h3>联系我们</h3>
+				<div class="twi-txt">
+					<div class="twi">
+						<a href="#" class="twitter"></a>
+					</div>
+					<div class="twi-text">
+						<p><a href="#">关注微信公众号</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="twi-txt1">
+					<div class="twi">
+						<a href="#" class="flickr"> </a>
+					</div>
+					<div class="twi-text">
+						<p><a href="#">关注新浪微博</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="twi-txt1">
+					<div class="twi">
+						<a href="#" class="facebook"> </a>
+					</div>
+					<div class="twi-text">
+						<p><a href="#">浏览更多旅游资讯</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-4 footer-top-grid">
+				<h3>业界资讯</h3>
+				<ul class="last">
+					<li><a href="#">中国旅游智库咨询会聚焦全域旅游等业界热点</a></li>
+					<li><a href="#">体验香港“海陆空”深度游 大屿山推出全新旅游线</a></li>
+					<li><a href="#">港澳青少年内地游学体系初步建立</a></li>
+					<li><a href="#">保护旅游者权益 提升幸福产业含金量</a></li>
+					<li><a href="#">厉新建：假日旅游消费潜力有待深入挖掘</a></li>
+					<li><a href="#">宁波：镇海打造休闲旅游度假区升级版</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+		<div class="footer">
+			<p>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="#">一旅游</a></p>
+		</div>
+	</div>
+<!-- //footer -->	
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

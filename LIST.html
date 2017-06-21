@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>LOGO</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-off-canvas-nav.css" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+        }
+a{
+    color: #000;
+}
+        .container{
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    ul li a img{
+        width: 255px;
+    }
+    .mainbody{
+        padding: 0;
+        margin-top: -33px;
+    }
+
+        .nav > li:hover .dropdown-menu {display: block; color: #0f0f0f; }
+
+        li.dropdown ul li :hover{
+            background-color: #eb9316;
+            color: yellow;
+        }
+        #home{
+            padding: 0px;
+            margin-top: 5px;
+        }
+        form{
+            padding: 0;
+            margin: 0 auto;
+        }
+        #weatherinfo{
+            margin-top: 5px;
+        }
+        #myTab{
+            width: 100%;
+            padding-left: 3px;
+        }
+        #myTab li{
+            border: 1px solid #b9def0;
+            border-radius: 10px;
+            width: 49.6%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #myTab .active a{
+            background-color: lightseagreen;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #52BA37;
+            text-decoration: none;
+        }
+
+          .effect img { 
+opacity:1; 
+
+transition: all 0.2s ease-in; 
+} 
+.effect .mask { 
+opacity:0; 
+overflow:visible; 
+border-color:rgba(0,0,0,0.7) transparent transparent transparent; 
+border-style:solid; 
+
+width:0; 
+height:0; 
+transform:translateY(-125px); 
+transition: transform 0.2s 0.1s ease-out, opacity 0.3s ease-in-out; 
+} 
+.effect:hover img { 
+opacity:0.7; 
+transform:scale(2,2); 
+} 
+.effect:hover .mask { 
+opacity: 1; 
+color:yellow;
+transform: translateY(0px); 
+} 
+        /*button{*/
+            /**/
+            /*margin: 0 auto;*/
+            /*display: table*/
+            /*width: auto*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                            <span class="sr-only">666666</span>
+                          <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">一旅行</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">首页</a></li>
+                            <li><a href="#">热门目的地</a></li>
+                            <li><a href="#contact">看游记</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">图库 <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">上传</a></li>
+                                    <li><a href="#">展览</a></li>
+                                    <li><a href="#">这里只留大坑</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">移动端</li>
+                                    <li><a href="#">Android</a></li>
+                                    <li><a href="#">IOS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+            </nav>
+
+        </div>
+    </div><br>
+    <div class="container mainbody">
+    <div class="row" >
+        <div class="hidden-xs col-md-2 ">
+            <div class="uk-panel uk-panel-box ">
+                这个地方叫珀斯，"世界上最孤独的城市"。<br>
+                车轮滚动的光影，辐条转动的声音，
+                拂在脸上的清风，挥洒淋漓的汗水，
+                匀速后退的一帧帧风景……
+
+                这些，或许都是你爱单车的理由！！！
+
+                单车，它是灿烂如风的少年！
+                亮出你的单车，
+                我与座驾，迎风而上！
+
+                每天早晨八点醒来，照顾孩子，晒太阳，穿过草木茂盛的公园，走很多路，对迎面而来的陌生人点头微笑，超市采购新鲜的肉和蔬果，在湖边喂黑天鹅面包，往西澳大学自动售货机投币买一罐王老吉，午睡，吃杨大姐做的川菜，带上礼物去当地朋友的农庄过圣诞节，窗户边读完《革命之路》，阳光下用手机写完一篇文字......
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-7 ">
+            <ul id="myTab" class="nav nav-pills" role="tablist">
+                <li role="presentation" class="active"><a  id="home-tab" href="#home"  role="tab" data-toggle="pill" aria-controls="word">热门景点</a></li>
+               
+                <li role="presentation"><a id="tianqi-tab" href="#tianqi" role="tab" data-toggle="pill" >住宿</a></li>
+            </ul>
+
+            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledBy="home-tab" >
+            <ul class="media-list">
+                <li class="media">
+                      <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+
+            </div>
+
+            <ul class="media-list">
+                <li class="media">
+                   <a class="media-left media-middle view effect" href="#">
+                    
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                
+                   </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+
+                </li>
+
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                       <a class="media-left media-middle view effect" href="about.php">
+                    
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                
+                   </a>
+                    <div class="media-body media-middle">
+                        <a href="about.php">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                      <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                      <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                      <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                     <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                     <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>钛媒体 . 53分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                       <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                     <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>豆瓣电影 . 28分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                       <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                       <a href="#">
+                           <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                       </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                      <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="media-list">
+                <li class="media">
+                      <a class="media-left media-middle view effect" href="#">
+                        <img  src="images/3.jpg" alt="图片提示" >
+                        <div class="mask"></div> 
+                      </a>
+                    <div class="media-body media-middle">
+                        <a href="#">
+                            <h4 class="media-heading">预祝你鸡年大吉……吧？| 语言学午餐 <span class=" media-middle badge">21</span> </h4>
+                        </a>
+                        <p>FS美高平台 . 19分钟前 . 分享</p>
+                        <span class="price">正在查询......</span>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+        <div class="hidden-xs col-md-3 ">
+            <div class="uk-panel uk-panel-box">
+                <p>我曾经有个浪漫想法，有一天，世界上的边境会消失，人们自由往来，想去哪里就去哪里。 你说，想太弱了，我要跨越。</p>
+                <br>
+                <article class="uk-comment">
+                    <header class="uk-comment-header">
+                        <img class="uk-comment-avatar" width="270" src="images/3.jpg" alt="图片提示">
+                        <h4 class="uk-comment-title">更多信息</h4>
+                        <div class="uk-comment-meta">志趣相投的游客</div>
+                    </header>
+                    <div class="uk-comment-body">
+                        反馈：希望能增加uwp应用的相互唤醒同步功能，比如我在手机听歌，然后想转到我的电脑上继续听，直接从手机上打开这个功能，电脑解锁然后开始使用当前软件自动放你现在手机听的歌曲。
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+<script type="text/javascript" src="js/jquery.min.js"> </script>
+    <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="js/bootstrap-off-canvas-nav.js"></script>
+
+<script type="text/javascript">
+$(
+  function () {
+    //调用城市景点数据
+            var placeTitle_array = new Array();  //景点名
+            var placeAD_array = new Array();     //景点地址
+            var placeImg_array = new Array();    //景点图片
+            var placePrice_array =new Array();   //门票价格
+    		$.ajax({
+		    type: "post",
+			url: "uploads/place.json" ,
+          
+			dataType: "json",
+
+              success: function(data) {
+
+		      $.each(data.result, function(i, item) {
+
+               var placeTitle = placeTitle_array.push(item.title);
+                var placeAD = placeAD_array.push(item.address);
+                var placeImg =placeImg_array.push(item.imgurl);
+                var placeImg =placePrice_array.push(item.price_min);
+              });
+//将json转换的数组遍历到DOM列表
+    $.each($("ul.media-list"), function(i, comment) {
+      var rTitle =$(this).find('li>div>a>h4');
+      rTitle.text(placeTitle_array[i]);
+      var rAD =$(this).find('li>div>p');
+      rAD.text(placeAD_array[i]);
+      var rImg =$(this).find('li>a>img');
+      rImg.attr('src',placeImg_array[i]);
+      var rPrice =$(this).find('li>div .price');
+      rPrice.html("门票均价： "+placePrice_array[i]+" RMB");
+
+    });
+
+            },
+
+			error: function(jqXHR){
+			   $("#home li div h4").html("服务器状态： " + jqXHR.status+"<br>请求阶段： "+jqXHR.readyState);
+			},
+		});
+    	
+
+
+  }
+);
+</script>
+</body>
+</html>

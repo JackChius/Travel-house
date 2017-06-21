@@ -1,0 +1,487 @@
+<?php
+include_once('connect.php');
+
+$query=mysql_query("select * from raty where id=1");
+$rs=mysql_fetch_array($query);
+if($rs['total']<1||$rs['voter']<1){
+	$aver = 0;
+}else{
+$aver=$rs['total']/$rs['voter'];
+}
+
+$aver=round($aver,1)*10;
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/star-score.css" rel="stylesheet" type="text/css" />
+<!-- js -->
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+// $(function(){
+// 	get_rate(<?php echo $aver;?>);
+// });
+function get_rate(rate){
+	rate=rate.toString();
+	var s;
+	var g;
+	$("#g").show();
+	if (rate.length>=3){
+		s=10;	
+		g=0;
+		$("#g").hide();
+	}else if(rate=="0"){
+		s=0;
+		g=0;
+	}else{
+		s=rate.substr(0,1);
+		g=rate.substr(1,1);
+	}
+	$("#s").text(s);
+	$("#g").text("."+ g);
+	$(".big_rate_up").animate({width:(parseInt(s)+parseInt(g)/10) * 14,height:26},1000);
+	$(".big_rate span").each(function(){
+		$(this).mouseover(function(){
+			$(".big_rate_up").width($(this).attr("rate") * 14 );
+			$("#s").text($(this).attr("rate"));
+			$("#g").text("");
+		}).click(function(){
+			var score = $(this).attr("rate");
+			$("#my_rate").html("您的评分：<span>"+score+"</span>");
+			$.ajax({
+		       type: "POST",
+		       url: "action.php",
+		       data:"score="+score,
+		       success: function(msg){
+				   //alert(msg);
+				   if(msg==1){
+					   $("#my_rate").html("<span>您已完成评分！【此IP已评分】</span>");
+				   }else if(msg==2){
+					   $("#my_rate").html("<span>您评过分了！【超出评分次数（1次）】</span>");
+				   }else{
+					   get_rate(msg);
+				   }
+		       }
+	        });
+		})
+	})
+	$(".big_rate").mouseout(function(){
+		$("#s").text(s);
+		$("#g").text("."+ g);
+		$(".big_rate_up").width("120px");
+		s=8;
+		// (parseInt(s)+parseInt(g)/10) * 14
+	})
+}
+</script>
+<!-- //js -->
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="一 Travel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!-- pop-up -->
+<link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+	   <script type="text/javascript">
+			$(document).ready(function() {
+				/*
+				 *  Simple image gallery. Uses default settings
+				 */
+
+				$('.fancybox').fancybox();
+
+			});
+		</script>
+<!-- pop-up -->
+<style>
+	 .backs {
+	
+	  background: url(images/p14.jpeg) no-repeat 0px 0px;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-ms-background-size: cover;
+		
+	}
+</style>
+
+</head>
+	
+<body>
+<div class="backs">
+	<div class="container">
+<!-- header -->	
+		<div class="header">
+			<div class="header-top">
+				<input type="text" placeholder="Search" required=" ">
+			</div>
+			<div class="clearfix"> </div>
+			<div class="header-bottom">
+				<div class="header-bottom-left">
+					<a href="index.html">一<span>旅游</span></a>
+				</div>
+				<div class="header-bottom-right">
+					<span class="menu">MENU</span>
+					<ul class="nav1">
+                        <li ><a href="index.html">首页</a></li>
+                        <li ><a href="events.html">热门景点</a></li>
+                        <li class="cap" ><a href="about.php">看游记</a></li>
+                        <li><a href="photo-show/8-18.php">上传</a></li>
+                        <li><a href="photo-show/8-17.php">图库</a></li>
+                        <li><a href="gallery.html">第二图库</a></li>
+
+					</ul>
+					<!-- script for menu -->
+						<script> 
+							$( "span.menu" ).click(function() {
+							$( "ul.nav1" ).slideToggle( 300, function() {
+							 // Animation complete.
+							});
+							});
+						</script>
+					<!-- //script for menu -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- about -->
+<div class="banner-bdy abt">
+<div class="container">
+	<div class="tutor">
+		<div class="content-text">
+			<div class="content-text-bottom">
+				<div class="about-grids">
+					<div class="col-md-6 about-grid">
+						<img src="images/place-detail.jpg" alt=" " />
+					</div>
+					<div class="col-md-6 about-grd">
+						<h4>北京野生动物园
+							<span>北京野生动物园一般指北京大兴野生动物园</span></h4>
+						<p>北京大兴野生动物园位于大兴区榆垡镇万亩森林之中，是经原国家林业局批准，北京市政府立项、北京绿野晴川有限公司投资建设的集动物保护、野生动物驯养繁殖及科普教育为一体的大型自然生态公园。动物园整体分为三个区域，分别为步行游览区、自驾游览区、猛兽体验区。
+						</p>
+       <!--星级评分开始-->
+	     <div class="rate">
+             <span class="score-word">为景点打分</span>
+             
+           <div class="big_rate">
+             <span rate="2">&nbsp;</span>
+             <span rate="4">&nbsp;</span>
+             <span rate="6">&nbsp;</span>
+             <span rate="8">&nbsp;</span>
+             <span rate="10">&nbsp;</span>
+          <div style="width:45px;" class="big_rate_up"></div>
+          </div>
+          <p><span id="s" class="s"></span><span id="g" class="g"></span></p>
+         <div id="my_rate"></div>
+          </div>
+      <!--评分结束-->
+
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="people">
+				<div class="col-md-6 people-left">
+					<h3>什么值得玩</h3>
+					<ul>
+						<li>
+							<div class="numer">1
+							</div>
+							<div class="numer-right">
+								<h4><a href="events.html">乘车说明</a>
+									<span>乘车路线</span></h4>
+								<p> 943路：永定门——玉泉营——西红门——黄村——北京野生动物园
+937路：白云路——玉泉营——大兴环岛——北京野生动物园</p>
+							</div>
+							<div class="clearfix"> </div>
+						</li>
+						<li>
+							<div class="numer">2
+							</div>
+							<div class="numer-right">
+								<h4><a href="events.html">景区开放时间：</a>
+									<span>预订须知</span></h4>
+								<p> 营业时间:9：00-17:00　笼网车末班:16：30　小火车末班：15：00　表演场时间P:上午：11：00　　下午：14：30
+仅供参考，实际以景区当日规定为准
+猿军团和鸟类表演停止演出。</p>
+							</div>
+							<div class="clearfix"> </div>
+						</li>
+						<li>
+							<div class="numer">3
+							</div>
+							<div class="numer-right">
+								<h4><a href="events.html">温馨提醒：</a>
+									<span>门票价格包括一次价和包年</span></h4>
+								<p> 请点击门票，以门票下方的产品说明为准
+猿军团和鸟类表演停止演出。
+停车场收费标准（参考）：7座以内的10元/天，7座以上的20元/天</p>
+							</div>
+							<div class="clearfix"> </div>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6 people-right">
+					<h3>优惠政策</h3>
+					<div class="fig-text">
+						<div class="fig-text-left">
+							<img src="images/4.jpg" alt=" " />
+						</div>
+						<div class="fig-text-right">
+							<h4>特殊人群政策</h4>
+							<p>a. 60周岁（不含）以上的老人（凭身份证或老年证）享老年票。
+b. 学生凭借学生证购买学生票（限研究生（不含）以下学历，除中小学生外使用优惠票需携带本人有效学生证件，只针对于全日制学生）。</p>
+						</div>
+						<div class="clearfix"> </div>
+						<p>特别提示
+							<span>1. 景区内的餐馆和购物店价格比较贵，建议游玩之前准备好适量的干粮和水。2. 景区面积很大，而且很多为开放区域，夏季时会很晒，请做好防晒准备。3. 周末及节假日时园内人会很多，条件允许的话请尽量错峰出行。4. 在乘坐喂养车喂养动物时要注意千万不要把手伸出铁笼，以免发生危险。5. 为保护动物，现在园区不接受外带的喂养食品带入。</span></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="fig-text1">
+				<div class="col-md-6 fig-text1-right">
+					<h3>和狮子、老虎、狒狒打招呼</h3>
+					<ul>
+						<li><a href ="#">从位于西侧的动物园大门进入，南线就位于左右边，沿路步行即可，南线需要步行的距离大约有1公里，</a></li>
+						<li><a href ="#">这里的动物是按照一般动物园的场馆方式饲养和展览的，可以隔着玻璃观赏。主要的场馆有狮虎馆、狮狒馆、猴子馆等，</a></li>
+						<li><a href ="#"> 南线的尽头处是一个动物表演场，可以在此观看动物表演，有狗熊杂技、猴子骑车、狮子钻圈等项目，非常有趣。</a></li>
+						<li><a href ="#">表演每次大约持续半小时时间，每天有多场，入馆之前建议先了解好表演的时间。s.</a></li>
+						<li><a href ="#"> 看过动物表演后便来到动物散养区，这里需要乘车游览。坐在喂养车上可以近距离观察动物，还可以喂养动物。</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 fig-text1-right">
+					<h3>近距离与动物互动、喂食</h3>
+					<ul>
+						<li><a href ="#">车行的终点即是北线的起点，这里首先有一个迷你动物散养区，</a></li>
+						<li><a href ="#">一般租用电瓶车半小时，约需70元。这里的动物都比较安全，可以喂养羊驼、鹿等食草动物</a></li>
+						<li><a href ="#"> 参观火烈鸟、孔雀、鹦鹉等鸟类动物</a></li>
+						<li><a href ="#">游玩过后便沿着北线一路向西步行游览，北线上多为鸟类展馆，可以看到火烈鸟、孔雀等多种美丽的鸟类，还有可以与人对话的鹦鹉</a></li>
+						<li><a href ="#"> 除此之外，在景区大门口和动物表演区附近还有两个儿童游乐园，可以让小朋友和一些小动物接触互动，</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		<div class="testimon">
+			<script src="js/responsiveslides.min.js"></script>
+				 <script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider3").responsiveSlides({
+				        auto: true,
+				        pager: false,
+				        nav: true,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+				
+				    });
+				  </script>
+			<!--//End-slider-script -->
+
+<!--评论区script开始-->
+ <script type="text/javascript">
+        var idNum = 1;
+        function addComment(){
+            idNum++;
+　　　　　　　//获取input中用户新输入的昵称和评论内容
+            var inputValue = document.getElementById("name").value;
+            var textValue = document.getElementById("comContent").value;
+            //判断是否为空
+            if(inputValue==""||textValue==""){
+                alert("昵称和评论内容不能为空！！");
+                return;
+            }
+            //获取已有评论的ID
+            var comContent1 = document.getElementById("comment1");
+　　　　　　　//克隆已有评论的节点，true为包含子节点
+            var newComment = comContent1.cloneNode(true);
+　　　　　　　//给新克隆的评论设置新的ID
+            newComment.setAttribute("id","comment"+idNum);
+　　　　　　　//在标签内赋入新的昵称和评论内容
+            newComment.getElementsByTagName("span")[0].innerText = inputValue;
+            newComment.getElementsByTagName("p")[0].innerText = textValue;
+            
+            //将新克隆并新赋值的评论加到原有评论的后面
+            var commentDiv = document.getElementById("comment");
+            commentDiv.appendChild(newComment);
+            
+            document.getElementById("name").value = "";
+            document.getElementById("comContent").value = "";
+            
+        }
+        
+    </script>
+<!--评论区script结束-->
+
+			<div  id="top" class="callbacks_container wow fadeInUp" data-wow-delay="0.5s">
+				<ul class="rslides" id="slider3">
+					<li>
+						<div class="testimon-info">
+							<h4>五一假期·出游：北京野生动物园
+								<span>迎来客流高峰</span></h4>
+							<p>从位于西侧的动物园大门进入，南线就位于左右边，沿路步行即可，南线需要步行的距离大约有1公里，这里的动物是按照一般动物园的场馆方式饲养和展览的，可以隔着玻璃观赏。</p>
+						</div>
+					</li>
+					<li>
+						<div class="testimon-info">
+							<h4>车行的终点即是北线的起点
+								<span>迷你动物散养区</span></h4>
+							<p>可以租电瓶车进入游玩，一般租用电瓶车半小时，约需70元。这里的动物都比较安全，可以喂养羊驼、鹿等食草动物，还可以和动物互动。</p>
+						</div>
+					</li>
+					<li>
+						<div class="testimon-info">
+							<h4>北线上有一座水禽湖
+								<span>在树影时间有天鹅等鸟类在湖中漫游</span></h4>
+							<p>环境悠然美丽。北线需要步行的距离大约1.5公里，终点处即回到了景区的大门，可以从此处离开。</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>	
+		</div>
+	</div>
+	</div>
+
+	<!--评论区开始-->
+	 <div id="outside">
+            <h3>最新评论</h3>
+            
+            <div id="comment">
+                <div id="comment1" class="comment1">
+                    一个网友
+                    <span>李二狗</span>
+                    <time>2017年5月1日 19:21:12</time>
+                    <p>
+                        这网站好啊！可以为人民服务！
+                    </p>                    
+                </div>
+            </div>
+            
+            <h4>发表评论</h4>
+            
+            <div id="addComment">
+                昵&nbsp;&nbsp;&nbsp;&nbsp;称：<input type="text" id="name" />
+                <br /><br />
+                评论内容:<textarea id="comContent"></textarea>
+                <button onclick="addComment()">提交评论</button>
+            </div>
+        </div>
+	<!--评论区结束-->
+
+	</div>
+<!-- //about -->
+<!-- footer -->
+	<div class="footer-top">
+	<div class="container">
+		<div class="footer-top-grids">
+			<div class="col-md-4 footer-top-grid">
+				<h3>关于旅行</h3>
+				<p>如果不去接触未知，我们的感觉将变得迟钝，我们的世界就那么小小的一点儿，就连好奇心也将消失不见。我们的目光将不再放眼远方的地平线，耳朵也听不到那些熟悉的声音。 </p>
+				<div class="read1">
+					<a href="#">返回顶部</a>
+				</div>
+			</div>
+			<div class="col-md-4 footer-top-grid">
+				<h3>关于一旅行</h3>
+				<div class="twi-txt">
+					<div class="twi">
+						<a href="#" class="twitter"></a>
+					</div>
+					<div class="twi-text">
+						<p><a href="#">关注微信公众号</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="twi-txt1">
+					<div class="twi">
+						<a href="#" class="flickr"> </a>
+					</div>
+					<div class="twi-text">
+						<p><a href="#">关注新浪微博</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="twi-txt1">
+					<div class="twi">
+						<a href="#" class="facebook"> </a>
+					</div>
+					<div class="twi-text">
+						<p><a href="#">浏览更多旅游资讯</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-4 footer-top-grid">
+				<h3>业界资讯</h3>
+				<ul class="last">
+					<li><a href="#">中国旅游智库咨询会聚焦全域旅游等业界热点</a></li>
+                    <li><a href="#">体验香港“海陆空”深度游 大屿山推出全新旅游线</a></li>
+                    <li><a href="#">港澳青少年内地游学体系初步建立</a></li>
+                    <li><a href="#">保护旅游者权益 提升幸福产业含金量</a></li>
+                    <li><a href="#">厉新建：假日旅游消费潜力有待深入挖掘</a></li>
+                    <li><a href="#">宁波：镇海打造休闲旅游度假区升级版</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+		<div class="footer">
+			<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="#">一旅游</a></p>
+		</div>
+	</div>
+<!-- //footer -->	
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>
